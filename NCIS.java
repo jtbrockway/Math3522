@@ -24,7 +24,7 @@ Result:
 	    S2(x) = 0.0 + 1.1102230246251565E-16(x - 3.0) + 2.571428571428571(x - 3.0)^2 + -1.5714285714285712(x - 3.0)^3
 	    S3(x) = 1.0 + 0.4285714285714286(x - 4.0) + -2.142857142857143(x - 4.0)^2 + 0.7142857142857143(x - 4.0)^3
 
-#3) (Textbook Problem 3.2.41)
+#3) (Textbook Problem 9.2.41)
 Input:
 	(0, 1), (1, 2), (2, 3), (3, 4), (4, 5)
 Result:
@@ -39,7 +39,9 @@ Result:
 
 public class NCIS {
 
+	// tridiagonal linear system solver
 	public static void tridAlgo(ArrayList<double[]> xy, ArrayList<Double> hi, ArrayList<Double> ss, ArrayList<Double> ls, ArrayList<Double> us, ArrayList<Double> zs, ArrayList<Double> bs, ArrayList<Double> cs, ArrayList<Double> ds){
+		// set up
 		ls.add(1.0);
 		us.add(0.0);
 		zs.add(0.0);
@@ -62,6 +64,7 @@ public class NCIS {
 
 	}
 
+	// creates and prints the S(x) function and its parts
 	public static void ncisAlgo(ArrayList<double[]> xy, ArrayList<Double> bs, ArrayList<Double> cs, ArrayList<Double> ds){
 		System.out.println("S(x) = ");
 		for(int j = 0; j < xy.size() - 1; j++){
@@ -125,7 +128,7 @@ public class NCIS {
 			hi.add(xy.get(i+1)[0] - xy.get(i)[0]);
 		}
 
-		// create the z list
+		// set up the right hand side of the tridiangonal system
 		for(int i = 1; i < xy.size() - 1; i++){
 			ss.add(((3/hi.get(i))*(xy.get(i+1)[1] - xy.get(i)[1])) - ((3/hi.get(i-1))*(xy.get(i)[1] - xy.get(i-1)[1])));
 		}
@@ -138,6 +141,7 @@ public class NCIS {
 		ArrayList<Double> cs = new ArrayList<>();
 		ArrayList<Double> ds = new ArrayList<>();
 
+		// Set up ArrayLists
 		for(int i = 0; i < xy.size(); i++){
 			bs.add(0.0);
 			cs.add(0.0);
