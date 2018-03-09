@@ -6,7 +6,7 @@
 \graphicspath{{}}
 
 \begin{document}
-\title{Math 352 - Project} %% Change the title
+\title{Math 352 - Project}
 \author{Sierra Battan, Jack Brockway, \(\&\) Randy Chen}
 \maketitle
 
@@ -14,31 +14,65 @@
 
 	\item[] \textbf{Program Guide:}
 	\begin{enumerate}
-		\item[] 
+		\item[\(\bullet\)] \(NCIS.java\) is our main program files that reads the user's input, moves the points into our data structures, calls our \(tridAlgo\) function (which is our subroutine that solves a tridiagonal system of equations), calls our \(ncisAlgo\) function, and prints out our findings.
+		\item[\(\bullet\)] Note: these are the assumptions we have made for our program:
+		\begin{enumerate}
+			\item[\(*\)] All inputs are of numeric form (i.e., ''cat dog'' is an invalid point).
+			\item[\(*\)] All inputs are entered in ascending order.
+		\end{enumerate}
+		\item[\(\bullet\)] \textbf{Usage Instructions:}
+		\begin{enumerate}
+			\item[\(*\)] Launch a terminal
+			\item[\(*\)] Navigate to the folder: \(BBC352Project\)
+			\item[\(*\)] Compile our program: \(javac NCIS.java\)
+			\item[\(*\)] Launch our program: \(java NCIS\)
+			\item[\(*\)] Input all points on new lines: \(x \ y\)
+			\item[\(*\)] When done entering points, write: \(done\)
+			\item[\(*\)] Our program will then output the resulting, simplified, natural cubic interpolation spline. \smiley
+		\end{enumerate}
 	\end{enumerate}
 	
 	\smallskip
-	\item[] \textbf{Natural Cubic Interpolation Spline:}
+	\item[] \textbf{Natural Cubic Interpolation Splines:}
 	\begin{enumerate} 
-		\item[] 
-	\end{enumerate}
-	
-	\smallskip
-	\item[] \textbf{Tridiagonal Subroutine:} 
-	\begin{enumerate}
-		\item[] 
+		\item[] Natural cubic interpolation splines are blah blah blah. You can solved them by first blah blah blah, using blah blah blah. The result is a piecewise, \(C^2\) function, which can be rewritten in many different ways.  
 	\end{enumerate}
 		
 	\item[] \textbf{Test Cases:}
 	\begin{enumerate}
+
 		\item[\(\bullet\)] Test 1:
 		\begin{enumerate}
-			\item[]
+			\item[] Input: \((1, 2), (2, 3), (3, 5)\)
+			\item[] Result: \(S(x) = \)
+			\begin{enumerate}
+				\item[] \(S_0(x) = 2.0 + 0.75(x - 1.0) + 0.0(x - 1.0)^2 + 0.25(x - 1.0)^3\)
+				\item[] \(S_1(x) = 3.0 + 1.5(x - 2.0) + 0.75(x - 2.0)^2 + -0.25(x - 2.0)^3\)
+			\end{enumerate}
 		\end{enumerate}
 			
-		\item[\(\bullet\)] Test 2:
+		\item[\(\bullet\)] Test 2: (Textbook Problem \(9.2.32\))
 		\begin{enumerate}
-			\item[] 
+			\item[] Input: \((1, 0), (2, 1), (3, 0), (4, 1), (5, 0))\)
+			\item[] Result: \(S(x) = \)
+			\begin{enumerate}
+				\item[] \(S_0(x) = 0.0 + 1.7142857\ldots(x - 1.0) + 0.0(x - 1.0)^2 + -0.7142857\ldots(x - 1.0)^3\)
+				\item[] \(S_1(x) = 1.0 + -0.4285714\ldots(x - 2.0) + -2.1428571\ldots(x - 2.0)^2 + 1.5714285\ldots(x - 2.0)^3\)
+				\item[] \(S_2(x) = 0.0 + 1.1102230\ldots E-16(x - 3.0) + 2.5714285\ldots(x - 3.0)^2 + -1.5714285\ldots(x - 3.0)^3\)
+				\item[] \(S_3(x) = 1.0 + 0.4285714\ldots(x - 4.0) + -2.1428571\ldots(x - 4.0)^2 + 0.7142857\ldots(x - 4.0)^3\)
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item[\(\bullet\)] Test 3: (Textbook Problem \(9.2.41)\)
+		\begin{enumerate}
+			\item[] Input: \((0, 1), (1, 2), (2, 3), (3, 4), (4, 5)\)
+			\item[] Result: \(S(x) = \)
+			\begin{enumerate}
+				\item[] \(S_0(x) = 1.0 + 1.0(x - 0.0) + 0.0(x - 0.0)^2 + 0.0(x - 0.0)^3\)
+				\item[] \(S_1(x) = 2.0 + 1.0(x - 1.0) + 0.0(x - 1.0)^2 + 0.0(x - 1.0)^3\)
+				\item[] \(S_2(x) = 3.0 + 1.0(x - 2.0) + 0.0(x - 2.0)^2 + 0.0(x - 2.0)^3\)
+				\item[] \(S_3(x) = 4.0 + 1.0(x - 3.0) + 0.0(x - 3.0)^2 + 0.0(x - 3.0)^3\)
+			\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}		
 		
