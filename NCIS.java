@@ -1,3 +1,5 @@
+//Inspiration drawn from: http://facstaff.cbu.edu/wschrein/media/M329%20Notes/M329L67.pdf
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
